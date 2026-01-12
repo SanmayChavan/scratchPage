@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scratch & Win - Rewards Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Custom background gradient for the hero section: Changed to a deeper, more premium indigo/blue gradient */
+        .hero-bg {
+            background-color: #3182ce;
+            /* Default dark blue */
+            background-image: linear-gradient(135deg, #3182ce 0%, #1e3a8a 100%);
+            /* Blue-600 to Indigo-900 */
+        }
+
+        /* Ensure consistent heights and vertical alignment for product cards */
+        .card-container {
+            /* The overall card must be set to flex-col and h-full */
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* Custom classes to enforce fixed heights and alignment (h-12 is roughly 2 lines) */
+        .title-area {
+            height: 3rem;
+            /* Tailwind h-12 is 3rem */
+            overflow: hidden;
+            /* Hide overflow if text is too long */
+        }
+
+        .description-area {
+            height: 3.5rem;
+            /* Custom size for description (around 3 lines) */
+            overflow: hidden;
+            margin-top: 0.25rem;
+            /* Tailwind mt-1 */
+        }
+
+        .price-area {
+            margin-top: auto;
+            /* Push price to the bottom */
+            padding-top: 0.5rem;
+            /* Add some space above the price */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="font-bold" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/stanvee-logo.png" alt="Logo" class="h-12 w-auto">
+                    </a>
+                </div>
+
+                <div class="flex items-center">
+
+                    <div class="hidden lg:flex space-x-6 items-center font-bold text-base">
+                        <a href="https://hotel.stanveeservices.com/"
+                            class="text-gray-700 hover:text-blue-600">Hotels</a> <a href="movies.html"
+                            class="text-gray-700 hover:text-blue-600">Movies</a> <a href="insurance.html"
+                            class="text-gray-700 hover:text-blue-600">Insurance</a> <a href="products.html"
+                            class="text-gray-700 hover:text-blue-600">Products</a> <a href="scratch.html"
+                            class="text-gray-700 hover:text-blue-600">Scratch Card</a> <a href="freeProduct.html"
+                            class="text-gray-700 hover:text-blue-600">Free Product</a>
+                    </div>
+
+                    <a href="./buy.html"
+                        class="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-500 text-white px-4 py-2 rounded-full font-semibold
+                               hover:from-blue-700 hover:via-blue-800 hover:to-indigo-600 transition shadow-lg text-sm ml-4">
+                        Buy Now
+                    </a>
+
+                    <button id="toggle-button" class="text-gray-700 focus:outline-none ml-4 lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="slide-menu"
+            class="hidden px-4 pt-3 pb-4 space-y-2 bg-white font-semibold text-base border-t border-gray-200 lg:hidden">
+            <a href="https://hotel.stanveeservices.com/" class="block text-gray-700 hover:text-blue-600">Hotels</a> <a
+                href="movies.html" class="block text-gray-700 hover:text-blue-600">Movies</a> <a href="insurance.html"
+                class="block text-gray-700 hover:text-blue-600">Insurance</a> <a href="products.html"
+                class="block text-gray-700 hover:text-blue-600">Products</a> <a href="scratch.html"
+                class="block text-gray-700 hover:text-blue-600">Scratch Card</a> <a href="freeProduct.html"
+                class="block text-gray-700 hover:text-blue-600">Free Product</a> <a href="./buy.html" class="block mt-2 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-500 text-white px-4 py-2 rounded-full font-semibold
+                                hover:from-blue-700 hover:via-blue-800 hover:to-indigo-600 transition text-center">
+                Buy Now
+            </a>
+        </div>
+    </nav>
+
+    <div
+        class="hero-bg w-full min-h-[520px] flex items-center py-14 bg-gradient-to-br from-indigo-900 via-purple-900 to-black">
+        <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+            <!-- LEFT CONTENT -->
+            <div class="text-center md:text-left order-2 md:order-1">
+
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight drop-shadow-xl">
+                    <i class="fas fa-hand-pointer text-yellow-400 mr-2 animate-bounce"></i>
+                    <span
+                        class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500">
+                        WOW DISCOUNT
+                    </span>
+                </h1>
+
+                <div class="mt-6 pl-4 border-l-4 border-yellow-400">
+                    <p class="text-xl sm:text-2xl font-semibold text-white uppercase">
+                        You will WIN a Premium Product
+                    </p>
+                    <p class="text-5xl sm:text-6xl font-black text-yellow-300 drop-shadow-lg">
+                        ₹15,000
+                    </p>
+                </div>
+
+                <div class="mt-6 space-y-4">
+                    <p
+                        class="inline-block text-yellow-300 font-semibold px-5 py-2 rounded-full border border-yellow-400 bg-indigo-800/60 shadow-lg">
+                        Products Worth ₹2,500 – ₹15,000
+                    </p>
+
+                    <p class="text-xl font-bold text-white">
+                        Scratch Card Price:
+                        <span class="text-yellow-300">₹699 Only</span>
+                    </p>
+
+                    <p class="text-sm text-indigo-300 font-medium">
+                        *Available after purchasing a <span class="font-semibold text-white">WOW Package</span>
+                    </p>
+
+                    <p class="text-base text-white italic font-semibold">
+                        Scratch the card to reveal your surprise 🎉
+                    </p>
+                </div>
+            </div>
+
+            <!-- RIGHT CARD -->
+            <div class="flex justify-center md:justify-end order-1 md:order-2 relative">
+                <div
+                    class="relative w-72 sm:w-80 h-[400px] bg-white rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.4)] p-4 text-center transition-transform duration-300 hover:scale-105">
+
+                    <img id="productImage" class="w-full h-[60%] object-contain p-2 drop-shadow-md"
+                        alt="Product Prize Image" />
+
+                    <h3 id="productName" class="text-lg font-bold mt-2 text-gray-800"></h3>
+
+                    <p id="productPrice" class="text-blue-600 text-xl font-extrabold"></p>
+
+                    <button id="claimBtn" disabled
+                        class="mt-4 w-full py-2 rounded-xl text-white font-semibold bg-gray-400 cursor-not-allowed transition">
+                        Claim Now
+                    </button>
+
+                    <!-- SCRATCH LAYER -->
+                    <canvas id="scratchCanvas" width="320" height="400"
+                        class="absolute inset-0 z-30 cursor-pointer rounded-2xl"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="max-w-7xl mx-auto px-4 py-16">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-12 text-gray-800">
+            Win One of These Exciting Products!
+        </h2>
+
+        <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"></div>
+    </div>
+
+    <script>
+        const products = [
+            { id: 1, name: "Travel Mate Luggage(55)", description: "Anti-theft zipper", price: 5599, image: "https://thekairoshome.com/wp-content/uploads/2025/02/KANIKA-PRODUCTS-IMAGES-2-600x600.jpg" },
+
+            { id: 2, name: "Two Premium Tshirts", description: "Two Premium Tshirts", price: 3500, image: "https://www.careofcarl.com/bilder/artiklar/zoom/24548211r_1.jpg?m=1672668801" },
+
+            { id: 3, name: "Branded Jeans", description: "Premium Jeans", price: 3999, image: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQSZr7f7sFsKXVUsaFe1mpk-OMC9KA-Zc-YKQqNXHTBxPE68xdcCeMDA0f9Z9APLsVB6l-Z3zU4CMAvX8rybydieJOJCkIduSHHs6Yjw3xJnfmRy-1Qq6c9xj7ao2ktZhfpm679smI&usqp=CAc" },
+
+            { id: 4, name: "Branded Shirt", description: "Premium Shirt", price: 3500, image: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ2EeWzZalnzYu4UxQb1R2Onf8Pjh4Bq0_HljILm5upNSAVowMDxmP9KaNk0qjgkvA7UmoQz_XHBPKTOSof-7g-wRX6eRo7KO8IHDJFeiCCAz7WHtEe9I-YtA" },
+
+            { id: 5, name: "Lock Master", description: "25L Digital Safe", price: 7490, image: "https://thekairoshome.com/wp-content/uploads/2024/11/Richa-1600x1600-3-600x600.png" },
+
+            { id: 6, name: "Multiutility Mixer and Grinder", description: "400W motor", price: 3499, image: "https://thekairoshome.com/wp-content/uploads/2024/08/Multiutility-Mixer-And-Grinder-600x600.jpg" },
+
+            { id: 7, name: "Premium Cutlery Set 24 pcs", description: "24 pcs", price: 3899, image: "https://thekairoshome.com/wp-content/uploads/2024/10/PREMIUM-CUTLERY-SET-24-PCS-1-600x600.jpg" },
+
+            { id: 8, name: "Oven Toaster Griller", description: "22L Capacity", price: 4190, image: "https://thekairoshome.com/wp-content/uploads/2024/11/22-600x600.png" },
+
+            { id: 9, name: "Silicone Cooking Spatula", description: "No. of pieces: 12", price: 2999, image: "https://thekairoshome.com/wp-content/uploads/2024/08/Silicone-Cooking-Spatula-With-Wooden-Handle-Set-of-12-Pcs-600x600.jpg" },
+
+            { id: 10, name: "Safari & Suitle Length", description: "Premium Cloth", price: 3500, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrz7ldOhoKYrtOkjdjRaMs4N5tUrThDbLwkA&s" },
+
+            { id: 11, name: "Double Bedsheet", description: "Premium Bedsheet", price: 2499, image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT-w--2YknOn7ndOAYmIlIlFlTLEGu6W1gQPNmaYDo7CqVGtpQGdRDTPxAHXFxvzm2O_M6ILuQ38EpMcJhdq7oXcfULLgrMFW0RRc3jTAYIE&usqp=CAc" },
+
+            { id: 12, name: "Watch", description: "Foce Watch", price: 3000, image: "https://m.media-amazon.com/images/I/71L86GskCkL.jpg" },
+
+            { id: 13, name: "Fresh Guard Duo-Stainless Steel Container Set of 2", description: "Capacity: 600 ML", price: 2499, image: "https://thekairoshome.com/wp-content/uploads/2024/11/1-23-600x600.jpg" },
+
+            { id: 14, name: "Foldable Kettle", description: "Capacity: 600 ML", price: 2499, image: "https://thekairoshome.com/wp-content/uploads/2024/10/SILICONE-FOLDABLE-ELECTRIC-KETTLE-600x600.jpg" },
+
+            { id: 15, name: "Kitchen Queen Knife", description: "Number of Knives: 5", price: 2499, image: "https://thekairoshome.com/wp-content/uploads/2024/08/Kitchen-Queen-Knife-Set-of-5-Pcs-With-Stand-600x600.jpg" },
+
+            { id: 16, name: "Solar Tower Emergency Light", description: "Rechargeable 3500MAH Lead-acid Battery + 2W Solar Panel", price: 2999, image: "https://thekairoshome.com/wp-content/uploads/2024/10/SOLAR-TOWER-EMERGENCY-LIGHT-600x600.jpg" },
+
+            { id: 17, name: "Smart Led Bluetooth Speaker", description: "360-degree Audio 15 watt frequency-40KHz", price: 2699, image: "https://thekairoshome.com/wp-content/uploads/2024/08/SMART-LED-BLUETOOTH-SPEAKER-600x600.jpg" },
+
+            { id: 18, name: "View Beat Bluetooth Earbuds", description: "Charging Time: 1 hour", price: 4290, image: "https://thekairoshome.com/wp-content/uploads/2024/11/1-600x600.jpg" },
+
+            { id: 19, name: "Air Fryer 4.5 Ltr", description: "Grill, Bake, Fry, Roast, Reheat", price: 9990, image: "https://thekairoshome.com/wp-content/uploads/2024/09/air-fryer-4.5-liter-600x600.jpg" },
+
+            { id: 20, name: "Airflow Bladeless Towerfan″", description: "Wind Speeds: 8 Settings", price: 12299, image: "https://thekairoshome.com/wp-content/uploads/2024/08/AirFlow-Pro-20-Bladeless-Tower-Fan-600x600.jpg" },
+
+            { id: 21, name: "Clean Tech Pro", description: "Battery: 2600mAh x 3", price: 7999, image: "https://thekairoshome.com/wp-content/uploads/2024/08/3-1.jpg" },
+
+            { id: 22, name: "Multi Master Mini Food Processor", description: "Blend, chop, whisk, shred", price: 6590, image: "https://thekairoshome.com/wp-content/uploads/2024/11/1-27-600x600.jpg" },
+
+            { id: 23, name: "Hydro Mist Pro", description: "Tank: 3.5-litre", price: 6499, image: "https://thekairoshome.com/wp-content/uploads/2024/10/Hydro-Mist-Pro-600x600.jpg" },
+
+            { id: 24, name: "Ear Buddy Pro Bluettoth Headphone", description: "70 hours playback", price: 2499, image: "https://thekairoshome.com/wp-content/uploads/2024/11/1-1.jpg" },
+
+            { id: 25, name: "Infrared Induction Cooktop", description: "Power: 2200W", price: 6999, image: "https://thekairoshome.com/wp-content/uploads/2025/03/1_11zon-1-600x430.jpg" },
+
+            { id: 26, name: "Juice Mate Pro", description: "Power: 120W", price: 14999, image: "https://thekairoshome.com/wp-content/uploads/2024/10/Juice-Mate-Pro-Green.jpg" },
+
+            { id: 27, name: "Premium microbath towel and hand towel", description: "Dual Capacity: Set of 2 – 1000ml & 1600ml", price: 2499, image: "https://thekairoshome.com/wp-content/uploads/2025/04/1-2-1-600x600.png" },
+
+            { id: 28, name: "Handled mini vaccum sealer with bags", description: "Vacuum Sealer with bags", price: 1800, image: "https://thekairoshome.com/wp-content/uploads/2024/10/HANDHELD-MINI-VACUUM-SEALER-WITH-BAGS-600x600.jpg" },
+
+            { id: 29, name: "Toasty Delight Sandwich Maker", description: "700W Non-Stick", price: 3190, image: "https://thekairoshome.com/wp-content/uploads/2024/11/1-25-600x600.jpg" },
+            { id: 30, name: "Heat Mate Electric Silicone Heating Mat", description: "700W Non-Stick", price: 6799, image: "https://thekairoshome.com/wp-content/uploads/2025/09/49-600x600.jpg" }
+
+        ];
+
+    </script>
+    <script>
+        const toggleButton = document.getElementById("toggle-button");
+        const slideMenu = document.getElementById("slide-menu");
+
+        toggleButton.addEventListener("click", () => {
+            slideMenu.classList.toggle("hidden");
+        });
+
+        document.addEventListener("click", (event) => {
+            if (slideMenu && !slideMenu.classList.contains("hidden")) {
+                if (!toggleButton.contains(event.target) && !slideMenu.contains(event.target)) {
+                    slideMenu.classList.add("hidden");
+                }
+            }
+        });
+    </script>
+
+    <script>
+        // --- PRODUCT SELECTION LOGIC ---
+        const minPrice = 1800;
+        const maxPrice = 15000;
+
+        const validProducts = products.filter(p => p.price >= minPrice && p.price <= maxPrice);
+
+        const expensiveProducts = validProducts.filter(p => p.price > 6000);
+        const normalProducts = validProducts.filter(p => p.price <= 6000);
+
+        const rand = Math.random();
+        let product;
+
+        if (rand < 0.02 && expensiveProducts.length > 0) {
+            product = expensiveProducts[Math.floor(Math.random() * expensiveProducts.length)];
+        } else if (normalProducts.length > 0) {
+            product = normalProducts[Math.floor(Math.random() * normalProducts.length)];
+        } else {
+            product = { name: "No Prize Available", price: 0, image: "", description: "" };
+        }
+
+        // Populate card content
+        document.getElementById("productImage").src = product.image;
+        document.getElementById("productName").innerText = product.name;
+        document.getElementById("productPrice").innerText = "₹" + product.price.toLocaleString('en-IN');
+
+        // --- BUILD PRODUCT GRID (UPDATED) ---
+        const grid = document.getElementById("productGrid");
+        validProducts.forEach(p => {
+            // Added card-container, flex, and h-full classes here
+            grid.innerHTML += `
+                <div class="card-container bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
+                    <div class="w-full h-48 bg-gray-50 flex items-center justify-center p-4">
+                        <img src="${p.image}" class="w-full h-full object-contain" alt="${p.name}" />
+                    </div>
+                    <div class="p-5 flex flex-col h-full">
+                        
+                        <h3 class="title-area text-base md:text-md font-bold text-gray-800">${p.name}</h3>
+                        
+                        <p class="description-area text-sm text-gray-500">${p.description.substring(0, 75)}...</p>
+                        
+                        <p class="price-area text-lg text-blue-600 font-extrabold">₹${p.price.toLocaleString('en-IN')}</p> 
+                    </div>
+                </div>
+            `;
+        });
+
+        // --- SCRATCH LOGIC (UNCHANGED) ---
+        const canvas = document.getElementById("scratchCanvas");
+        const ctx = canvas.getContext("2d");
+        let scratching = false;
+        let claimEventAdded = false;
+
+        canvas.width = 320;
+        canvas.height = 380;
+
+        ctx.fillStyle = "#5c7b94";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "white";
+        ctx.font = "bold 32px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText("SCRATCH HERE", canvas.width / 2, canvas.height / 2);
+
+
+        const claimBtn = document.getElementById("claimBtn");
+
+        function getXY(e) {
+            const rect = canvas.getBoundingClientRect();
+            let x, y;
+            if (e.touches) {
+                x = e.touches[0].clientX - rect.left;
+                y = e.touches[0].clientY - rect.top;
+            } else {
+                x = e.clientX - rect.left;
+                y = e.clientY - rect.top;
+            }
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+
+            return { x: x * scaleX, y: y * scaleY };
+        }
+
+        function scratch(e) {
+            if (!scratching) return;
+            e.preventDefault();
+            const { x, y } = getXY(e);
+
+            ctx.globalCompositeOperation = "destination-out";
+            ctx.beginPath();
+            ctx.arc(x, y, 25, 0, Math.PI * 2);
+            ctx.fill();
+
+            checkReveal();
+        }
+
+        function startScratching(e) {
+            scratching = true;
+            scratch(e);
+        }
+
+        function stopScratching() {
+            scratching = false;
+        }
+
+        // Mouse events
+        canvas.addEventListener("mousedown", startScratching);
+        document.addEventListener("mouseup", stopScratching);
+        canvas.addEventListener("mousemove", scratch);
+
+        // Touch events
+        canvas.addEventListener("touchstart", startScratching);
+        document.addEventListener("touchend", stopScratching);
+        canvas.addEventListener("touchmove", scratch);
+
+        function checkReveal() {
+            const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+            let clear = 0;
+            for (let i = 0; i < data.length; i += 4) {
+                if (data[i + 3] === 0) clear++;
+            }
+
+            const percent = (clear / (canvas.width * canvas.height)) * 100;
+
+            if (percent > 35) {
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                canvas.style.display = "none";
+
+                claimBtn.disabled = false;
+                claimBtn.classList.remove("bg-gray-400", "cursor-not-allowed");
+                claimBtn.classList.add("bg-blue-600", "hover:bg-blue-700");
+
+                canvas.removeEventListener("mousedown", startScratching);
+                document.removeEventListener("mouseup", stopScratching);
+                canvas.removeEventListener("mousemove", scratch);
+                canvas.removeEventListener("touchstart", startScratching);
+                document.removeEventListener("touchend", stopScratching);
+                canvas.removeEventListener("touchmove", scratch);
+
+
+                if (!claimEventAdded) {
+                    claimBtn.addEventListener("click", () => {
+                        localStorage.setItem("selectedProduct", JSON.stringify(product));
+                        window.open("claim.html", "_blank");
+                    });
+                    claimEventAdded = true;
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
