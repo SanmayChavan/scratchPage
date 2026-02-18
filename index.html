@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -113,7 +113,7 @@
         class="hero-bg w-full min-h-[520px] flex items-center py-14 bg-gradient-to-br from-indigo-900 via-purple-900 to-black">
         <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
-            <!-- LEFT CONTENT -->
+            
             <div class="text-center md:text-left order-2 md:order-1">
 
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight drop-shadow-xl">
@@ -154,7 +154,7 @@
                 </div>
             </div>
 
-            <!-- RIGHT CARD -->
+            
             <div class="flex justify-center md:justify-end order-1 md:order-2 relative">
                 <div
                     class="relative w-72 sm:w-80 h-[400px] bg-white rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.4)] p-4 text-center transition-transform duration-300 hover:scale-105 overflow-hidden">
@@ -171,7 +171,7 @@
                         Claim Now
                     </button>
 
-                    <!-- SCRATCH LAYER -->
+                 
                     <canvas id="scratchCanvas" class="absolute inset-0 w-full h-full z-30 cursor-pointer rounded-2xl">
                     </canvas>
                 </div>
@@ -424,4 +424,343 @@
 
 </body>
 
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wow Stanvee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .hero-bg {
+            background-color: #3182ce;
+            background-image: linear-gradient(135deg, #3182ce 0%, #1e3a8a 100%);
+        }
+
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="font-bold" target="_blank" rel="noopener noreferrer">
+                        <img src="https://thebrandtadka.com/websiteurl/fulltankstanvee/assets/logo.png" alt="Logo"
+                            class="h-12 w-auto">
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden lg:flex space-x-6 items-center font-bold text-base">
+                        <a href="https://hotel.stanveeservices.com/" class="text-gray-700 hover:text-blue-600">Hotels</a>
+                        <a href="movies.html" class="text-gray-700 hover:text-blue-600">Movies</a>
+                        <a href="insurance.html" class="text-gray-700 hover:text-blue-600">Insurance</a>
+                        <a href="https://stanveeproducts.vercel.app/" class="text-gray-700 hover:text-blue-600">Products</a>
+                        <a href="#" class="text-gray-700 hover:text-blue-600">Scratch Card</a>
+                        <a href="freeProduct.html" class="text-gray-700 hover:text-blue-600">Free Product</a>
+                    </div>
+
+                    <a href="./buy.html"
+                        class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white px-4 py-2 rounded-full font-semibold hover:from-pink-600 hover:via-purple-600 hover:to-indigo-600 transition shadow-lg text-sm ml-4">
+                        Buy Now
+                    </a>
+
+                    <button id="toggle-button" class="text-gray-700 focus:outline-none ml-4 lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="slide-menu"
+            class="hidden px-4 pt-3 pb-4 space-y-2 bg-white font-semibold text-base border-t border-gray-200 lg:hidden">
+            <a href="https://hotel.stanveeservices.com/" class="text-gray-700 hover:text-blue-600">Hotels</a>
+            <a href="movies.html" class="text-gray-700 hover:text-blue-600">Movies</a>
+            <a href="insurance.html" class="text-gray-700 hover:text-blue-600">Insurance</a>
+            <a href="https://stanveeproducts.vercel.app/" class="text-gray-700 hover:text-blue-600">Products</a>
+            <a href="#" class="text-gray-700 hover:text-blue-600">Scratch Card</a>
+            <a href="freeProduct.html" class="text-gray-700 hover:text-blue-600">Free Product</a>
+        </div>
+    </nav>
+
+    <div class="bg-gradient-to-br from-indigo-900 via-purple-900 to-black w-full min-h-[520px] flex items-center py-14">
+        <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+            <!-- LEFT CONTENT -->
+            <div class="text-center md:text-left order-2 md:order-1">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight drop-shadow-xl">
+                    <i class="fas fa-hand-pointer text-yellow-400 mr-2 animate-bounce"></i>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500">
+                        WOW DISCOUNT
+                    </span>
+                </h1>
+
+                <div class="mt-6 pl-4 border-l-4 border-yellow-400">
+                    <p class="text-xl sm:text-2xl font-semibold text-white uppercase">
+                        You will WIN a Premium Product upto
+                    </p>
+                    <p class="text-5xl sm:text-6xl font-black text-yellow-300 drop-shadow-lg">
+                        ₹15,000
+                    </p>
+                </div>
+
+                <div class="mt-6 space-y-4">
+                    <p
+                        class="inline-block text-yellow-300 font-semibold px-5 py-2 rounded-full border border-yellow-400 bg-indigo-800/60 shadow-lg">
+                        Products Worth ₹2,500 – ₹15,000
+                    </p>
+
+                    <p class="text-xl font-bold text-white">
+                        Scratch Card Price:
+                        <span class="text-yellow-300">₹699 Only</span>
+                    </p>
+
+                    <p class="text-sm text-indigo-300 font-medium">
+                        *Available after purchasing a <span class="font-semibold text-white">WOW Package</span>
+                    </p>
+
+                    <p class="text-base text-white italic font-semibold">
+                        Scratch the card to reveal your surprise 🎉
+                    </p>
+                </div>
+            </div>
+
+            <!-- RIGHT CARD -->
+            <div class="flex justify-center md:justify-end order-1 md:order-2 relative">
+                <div
+                    class="relative w-72 sm:w-80 h-[400px] bg-white rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.4)] p-4 text-center transition-transform duration-300 hover:scale-105 overflow-hidden">
+
+                    <img id="productImage" class="w-full h-[60%] object-contain p-2 drop-shadow-md"
+                        alt="Product Prize Image" />
+
+                    <h3 id="productName" class="text-lg font-bold mt-2 text-gray-800"></h3>
+
+                    <p id="productPrice" class="text-xl font-extrabold text-black"></p>
+
+                    <button id="claimBtn" disabled
+                        class="mt-4 w-full py-2 rounded-xl text-white font-semibold bg-gray-400 cursor-not-allowed transition">
+                        Claim Now
+                    </button>
+
+                    <canvas id="scratchCanvas" class="absolute inset-0 w-full h-full z-30 cursor-pointer rounded-2xl"></canvas>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 py-16">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-12 text-gray-800">
+            Win One of These Exciting Products!
+        </h2>
+
+        <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"></div>
+    </div>
+
+    <script>
+        const products = [
+            { id: 1, name: "Juice Mate Pro", price: 14999, image: "./images/juiceMatePro-1.jpg" },
+            { id: 2, name: "Airflow Bladeless Towerfan″", price: 12299, image: "./images/airflow1.jpg" },
+            { id: 3, name: "Air Fryer 4.5 Ltr", price: 9990, image: "./images/airfryer.jpg" },
+            { id: 4, name: "Clean Tech Pro", price: 7999, image: "./images/cleanTech4.jpg" },
+            { id: 5, name: "Infrared Induction Cooktop", price: 6999, image: "./images/induction.jpg" },
+            { id: 6, name: "Heat Mate Electric Silicone Heating Mat", price: 6799, image: "./images/heatmate.jpg" },
+            { id: 7, name: "Multi Master Mini Food Processor", price: 6590, image: "./images/multimaster6in1food-3.jpg" },
+            { id: 8, name: "Travel Mate Luggage(55)", price: 5599, image: "./images/travelBag.jpg" },
+            { id: 9, name: "Watch", price: 4500, image: "./images/watch.jpg" },
+            { id: 10, name: "View Beat Bluetooth Earbuds", price: 4290, image: "./images/ViewBeat.jpg" },
+            { id: 11, name: "Chillbreeze 3-in-1 Mini Air Cooler", price: 4190, image: "./images/aircooler.jpg" },
+            { id: 12, name: "Two Premium Tshirts", price: 4000, image: "./images/twobrandedTshirt.jpg" },
+            { id: 13, name: "Branded Shirt", price: 4000, image: "./images/BrandedShirt.webp" },
+            { id: 14, name: "Branded Jeans", price: 3999, image: "./images/brandedJeans.webp" },
+            { id: 15, name: "Premium Cutlery Set 24 pcs", price: 3899, image: "./images/knife.jpg" },
+            { id: 16, name: "Safari & Suitle Length", price: 3500, image: "./images/safari.jpg" },
+            { id: 17, name: "Multiutility Mixer and Grinder", price: 3499, image: "./images/Multiutility.jpg" },
+            { id: 18, name: "Toasty Delight Sandwich Maker", price: 3190, image: "./images/toasty.jpg" },
+            { id: 19, name: "BlendGo-Rechargeable Juice Blender", price: 2999, image: "./images/blendGo.jpg" },
+            { id: 20, name: "Silicone Cooking Spatula", price: 2999, image: "./images/spatula.jpg" },
+            { id: 21, name: "Solar Tower Emergency Light", price: 2999, image: "./images/tower.jpg" },
+            { id: 22, name: "Sound Sip Stainless Steel", price: 2999, image: "./images/soundsip.jpg" },
+            { id: 23, name: "Double Bedsheet", price: 2999, image: "./images/bedsheet.jpg" },
+            { id: 24, name: "Chop Mate Mini Rechargeable", price: 2699, image: "./images/chopMate.jpg" },
+            { id: 25, name: "Fresh Guard Duo-Stainless Steel Container Set of 2", price: 2500, image: "./images/freshGuard.jpg" },
+            { id: 26, name: "Foldable Kettle", price: 2500, image: "./images/kettle-1.jpg" },
+            { id: 27, name: "Kitchen Queen Knife", price: 2500, image: "./images/knife.jpg" },
+            { id: 28, name: "Ear Buddy Pro Bluettoth Headphone", price: 2500, image: "./images/headphone.jpg" },
+            { id: 29, name: "Premium microbath towel and hand towel", price: 2500, image: "./images/towel.png" },
+            { id: 30, name: "Handhled mini vaccum sealer with bags", price: 2500, image: "./images/handled.jpg" }
+        ];
+
+        // --- SCRATCH CARD PRODUCT SELECTION ALGORITHM ---
+        function selectProduct() {
+            const rand = Math.random() * 100;
+
+            if (rand < 1) {
+                // 1% chance → ID 1–4
+                const topProducts = products.filter(p => p.id >= 1 && p.id <= 4);
+                return topProducts[Math.floor(Math.random() * topProducts.length)];
+            } else if (rand < 3) {
+                // 2% chance → ID 5–9
+                const midProducts = products.filter(p => p.id >= 5 && p.id <= 9);
+                return midProducts[Math.floor(Math.random() * midProducts.length)];
+            } else {
+                // 97% chance → ID 10–30
+                const normalProducts = products.filter(p => p.id >= 10 && p.id <= 30);
+                return normalProducts[Math.floor(Math.random() * normalProducts.length)];
+            }
+        }
+
+        const product = selectProduct();
+
+        document.getElementById("productImage").src = product.image;
+        document.getElementById("productName").innerText = product.name;
+        document.getElementById("productPrice").innerText = "₹" + product.price.toLocaleString('en-IN');
+
+        // --- BUILD PRODUCT GRID ---
+        const grid = document.getElementById("productGrid");
+        products.forEach(p => {
+            grid.innerHTML += `
+    <div class="card-container bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col overflow-hidden h-full">
+
+      <div class="px-5 pt-5 pb-3">
+        <h3 class="text-lg font-semibold text-gray-900 truncate" title="${p.name}">
+          ${p.name}
+        </h3>
+      </div>
+
+      <div class="flex-grow bg-gray-50 flex items-center justify-center px-8 py-6">
+        <img src="${p.image}" alt="${p.name}" class="max-h-36 object-contain" />
+      </div>
+
+      <div class="px-5 py-4 border-t border-gray-200">
+        <p class="text-xl font-bold text-black">
+          MRP: ₹${p.price.toLocaleString('en-IN')}
+        </p>
+      </div>
+
+    </div>
+  `;
+        });
+
+        // --- SCRATCH LOGIC ---
+        const canvas = document.getElementById("scratchCanvas");
+        const ctx = canvas.getContext("2d");
+        let scratching = false;
+        let claimEventAdded = false;
+
+        canvas.width = 320;
+        canvas.height = 380;
+
+        ctx.fillStyle = "#5c7b94";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "white";
+        ctx.font = "bold 32px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText("SCRATCH HERE", canvas.width / 2, canvas.height / 2);
+
+        const claimBtn = document.getElementById("claimBtn");
+
+        function getXY(e) {
+            const rect = canvas.getBoundingClientRect();
+            let x, y;
+            if (e.touches) {
+                x = e.touches[0].clientX - rect.left;
+                y = e.touches[0].clientY - rect.top;
+            } else {
+                x = e.clientX - rect.left;
+                y = e.clientY - rect.top;
+            }
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            return { x: x * scaleX, y: y * scaleY };
+        }
+
+        function scratch(e) {
+            if (!scratching) return;
+            e.preventDefault();
+            const { x, y } = getXY(e);
+
+            ctx.globalCompositeOperation = "destination-out";
+            ctx.beginPath();
+            ctx.arc(x, y, 25, 0, Math.PI * 2);
+            ctx.fill();
+
+            checkReveal();
+        }
+
+        function startScratching(e) { scratching = true; scratch(e); }
+        function stopScratching() { scratching = false; }
+
+        canvas.addEventListener("mousedown", startScratching);
+        document.addEventListener("mouseup", stopScratching);
+        canvas.addEventListener("mousemove", scratch);
+
+        canvas.addEventListener("touchstart", startScratching);
+        document.addEventListener("touchend", stopScratching);
+        canvas.addEventListener("touchmove", scratch);
+
+        function checkReveal() {
+            const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+            let clear = 0;
+            for (let i = 0; i < data.length; i += 4) if (data[i + 3] === 0) clear++;
+            const percent = (clear / (canvas.width * canvas.height)) * 100;
+
+            if (percent > 35) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                canvas.style.display = "none";
+
+                claimBtn.disabled = false;
+                claimBtn.classList.remove("bg-gray-400", "cursor-not-allowed");
+                claimBtn.classList.add("bg-blue-600", "hover:bg-blue-700");
+
+                canvas.removeEventListener("mousedown", startScratching);
+                document.removeEventListener("mouseup", stopScratching);
+                canvas.removeEventListener("mousemove", scratch);
+                canvas.removeEventListener("touchstart", startScratching);
+                document.removeEventListener("touchend", stopScratching);
+                canvas.removeEventListener("touchmove", scratch);
+
+                if (!claimEventAdded) {
+                    claimBtn.addEventListener("click", () => {
+                        localStorage.setItem("selectedProduct", JSON.stringify(product));
+                        window.open("claim.html", "_blank");
+                    });
+                    claimEventAdded = true;
+                }
+            }
+        }
+
+        // --- MENU TOGGLE ---
+        const toggleButton = document.getElementById("toggle-button");
+        const slideMenu = document.getElementById("slide-menu");
+
+        toggleButton.addEventListener("click", () => slideMenu.classList.toggle("hidden"));
+        document.addEventListener("click", (event) => {
+            if (!slideMenu.classList.contains("hidden") && !toggleButton.contains(event.target) && !slideMenu.contains(event.target)) {
+                slideMenu.classList.add("hidden");
+            }
+        });
+    </script>
+
+</body>
 </html>
