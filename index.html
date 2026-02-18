@@ -583,53 +583,56 @@
     <script>
         const products = [
             { id: 1, name: "Juice Mate Pro", price: 14999, image: "./images/juiceMatePro-1.jpg" },
-            { id: 2, name: "Airflow Bladeless Towerfan″", price: 12299, image: "./images/airflow1.jpg" },
+            { id: 2, name: "Airflow Bladeless Towerfan", price: 12299, image: "./images/airflow1.jpg" },
             { id: 3, name: "Air Fryer 4.5 Ltr", price: 9990, image: "./images/airfryer.jpg" },
             { id: 4, name: "Clean Tech Pro", price: 7999, image: "./images/cleanTech4.jpg" },
             { id: 5, name: "Infrared Induction Cooktop", price: 6999, image: "./images/induction.jpg" },
             { id: 6, name: "Heat Mate Electric Silicone Heating Mat", price: 6799, image: "./images/heatmate.jpg" },
             { id: 7, name: "Multi Master Mini Food Processor", price: 6590, image: "./images/multimaster6in1food-3.jpg" },
             { id: 8, name: "Travel Mate Luggage(55)", price: 5599, image: "./images/travelBag.jpg" },
-            { id: 9, name: "View Beat Bluetooth Earbuds", price: 4600, image: "./images/ViewBeat.jpg" },
-            { id: 10, name: "Watch", price: 4500, image: "./images/watch.jpg" },
-            { id: 11, name: "Chillbreeze 3-in-1 Mini Air Cooler", price: 4190, image: "./images/aircooler.jpg" },
-            { id: 12, name: "Two Premium Tshirts", price: 4000, image: "./images/twobrandedTshirt.jpg" },
-            { id: 13, name: "Branded Shirt", price: 4000, image: "./images/BrandedShirt.webp" },
+            { id: 9, name: "View Beat Bluetooth Earbuds", price: 4290, image: "./images/ViewBeat.jpg" },
+            { id: 10, name: "Premium Cutlery Set 24 pcs", price: 3899, image: "./images/premiumCutlery1.jpg" },
+            { id: 11, name: "Solar Tower Emergency Light", price: 2999, image: "./images/tower.jpg" },
+            { id: 12, name: "Kitchen Queen Knife", price: 2500, image: "./images/knife.jpg" },
+            { id: 13, name: "Multiutility Mixer and Grinder", price: 3499, image: "./images/Multiutility.jpg" },
             { id: 14, name: "Branded Jeans", price: 3999, image: "./images/brandedJeans.webp" },
-            { id: 15, name: "Premium Cutlery Set 24 pcs", price: 3899, image: "./images/premiumCutlery1.jpg" },
+            { id: 15, name: "Watch", price: 4500, image: "./images/watch.jpg" },
             { id: 16, name: "Safari & Suitle Length", price: 3500, image: "./images/safari.jpg" },
-            { id: 17, name: "Multiutility Mixer and Grinder", price: 3499, image: "./images/Multiutility.jpg" },
+            { id: 17, name: "Branded Shirt", price: 4000, image: "./images/BrandedShirt.webp" },
             { id: 18, name: "Toasty Delight Sandwich Maker", price: 3190, image: "./images/toasty.jpg" },
             { id: 19, name: "BlendGo-Rechargeable Juice Blender", price: 2999, image: "./images/blend_go.jpg" },
             { id: 20, name: "Silicone Cooking Spatula", price: 2999, image: "./images/spatula.jpg" },
-            { id: 21, name: "Solar Tower Emergency Light", price: 2999, image: "./images/tower.jpg" },
+            { id: 21, name: "Chillbreeze 3-in-1 Mini Air Cooler", price: 4190, image: "./images/aircooler.jpg" },
             { id: 22, name: "Sound Sip Stainless Steel", price: 2999, image: "./images/soundsip.jpg" },
             { id: 23, name: "Double Bedsheet", price: 2999, image: "./images/bedsheet.jpg" },
             { id: 24, name: "Chop Mate Mini Rechargeable", price: 2699, image: "./images/chopMate.jpg" },
             { id: 25, name: "Fresh Guard Duo-Stainless Steel Container Set of 2", price: 2500, image: "./images/freshGuard.jpg" },
             { id: 26, name: "Foldable Kettle", price: 2500, image: "./images/kettle-1.jpg" },
-            { id: 27, name: "Kitchen Queen Knife", price: 2500, image: "./images/knife.jpg" },
+            { id: 27, name: "Two Premium Tshirts", price: 4000, image: "./images/twobrandedTshirt.jpg" },
             { id: 28, name: "Ear Buddy Pro Bluettoth Headphone", price: 2500, image: "./images/headphone.jpg" },
             { id: 29, name: "Premium microbath towel and hand towel", price: 2500, image: "./images/towel.png" },
             { id: 30, name: "Handhled mini vaccum sealer with bags", price: 2500, image: "./images/handled.jpg" }
         ];
 
-        // --- SCRATCH CARD PRODUCT SELECTION ALGORITHM ---
+        // -------- UPDATED SCRATCH CARD ALGORITHM --------
         function selectProduct() {
             const rand = Math.random() * 100;
 
             if (rand < 1) {
-                // 1% chance → ID 1–4
-                const topProducts = products.filter(p => p.id >= 1 && p.id <= 4);
-                return topProducts[Math.floor(Math.random() * topProducts.length)];
+                const group1 = products.filter(p => p.id >= 1 && p.id <= 4);
+                return group1[Math.floor(Math.random() * group1.length)];
+
             } else if (rand < 3) {
-                // 2% chance → ID 5–9
-                const midProducts = products.filter(p => p.id >= 5 && p.id <= 9);
-                return midProducts[Math.floor(Math.random() * midProducts.length)];
+                const group2 = products.filter(p => p.id >= 5 && p.id <= 9);
+                return group2[Math.floor(Math.random() * group2.length)];
+
+            } else if (rand < 7) {
+                const group3 = products.filter(p => p.id >= 10 && p.id <= 13);
+                return group3[Math.floor(Math.random() * group3.length)];
+
             } else {
-                // 97% chance → ID 10–30
-                const normalProducts = products.filter(p => p.id >= 10 && p.id <= 30);
-                return normalProducts[Math.floor(Math.random() * normalProducts.length)];
+                const group4 = products.filter(p => p.id >= 14 && p.id <= 30);
+                return group4[Math.floor(Math.random() * group4.length)];
             }
         }
 
@@ -637,35 +640,29 @@
 
         document.getElementById("productImage").src = product.image;
         document.getElementById("productName").innerText = product.name;
-        document.getElementById("productPrice").innerText = "₹" + product.price.toLocaleString('en-IN');
+        document.getElementById("productPrice").innerText =
+            "₹" + product.price.toLocaleString("en-IN");
 
-        // --- BUILD PRODUCT GRID ---
+        // -------- PRODUCT GRID --------
         const grid = document.getElementById("productGrid");
         products.forEach(p => {
             grid.innerHTML += `
     <div class="card-container bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col overflow-hidden h-full">
-
-      <div class="px-5 pt-5 pb-3">
-        <h3 class="text-lg font-semibold text-gray-900 truncate" title="${p.name}">
-          ${p.name}
-        </h3>
-      </div>
-
-      <div class="flex-grow bg-gray-50 flex items-center justify-center px-8 py-6">
-        <img src="${p.image}" alt="${p.name}" class="max-h-36 object-contain" />
-      </div>
-
-      <div class="px-5 py-4 border-t border-gray-200">
-        <p class="text-xl font-bold text-black">
-          MRP: ₹${p.price.toLocaleString('en-IN')}
-        </p>
-      </div>
-
-    </div>
-  `;
+        <div class="px-5 pt-5 pb-3">
+            <h3 class="text-lg font-semibold text-gray-900 truncate">${p.name}</h3>
+        </div>
+        <div class="flex-grow bg-gray-50 flex items-center justify-center px-8 py-6">
+            <img src="${p.image}" alt="${p.name}" class="max-h-36 object-contain" />
+        </div>
+        <div class="px-5 py-4 border-t border-gray-200">
+            <p class="text-xl font-bold text-black">
+                MRP: ₹${p.price.toLocaleString('en-IN')}
+            </p>
+        </div>
+    </div>`;
         });
 
-        // --- SCRATCH LOGIC ---
+        // -------- SCRATCH LOGIC --------
         const canvas = document.getElementById("scratchCanvas");
         const ctx = canvas.getContext("2d");
         let scratching = false;
@@ -686,17 +683,9 @@
 
         function getXY(e) {
             const rect = canvas.getBoundingClientRect();
-            let x, y;
-            if (e.touches) {
-                x = e.touches[0].clientX - rect.left;
-                y = e.touches[0].clientY - rect.top;
-            } else {
-                x = e.clientX - rect.left;
-                y = e.clientY - rect.top;
-            }
-            const scaleX = canvas.width / rect.width;
-            const scaleY = canvas.height / rect.height;
-            return { x: x * scaleX, y: y * scaleY };
+            let x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+            let y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
+            return { x, y };
         }
 
         function scratch(e) {
@@ -726,7 +715,9 @@
         function checkReveal() {
             const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
             let clear = 0;
-            for (let i = 0; i < data.length; i += 4) if (data[i + 3] === 0) clear++;
+            for (let i = 0; i < data.length; i += 4)
+                if (data[i + 3] === 0) clear++;
+
             const percent = (clear / (canvas.width * canvas.height)) * 100;
 
             if (percent > 35) {
@@ -737,13 +728,6 @@
                 claimBtn.classList.remove("bg-gray-400", "cursor-not-allowed");
                 claimBtn.classList.add("bg-blue-600", "hover:bg-blue-700");
 
-                canvas.removeEventListener("mousedown", startScratching);
-                document.removeEventListener("mouseup", stopScratching);
-                canvas.removeEventListener("mousemove", scratch);
-                canvas.removeEventListener("touchstart", startScratching);
-                document.removeEventListener("touchend", stopScratching);
-                canvas.removeEventListener("touchmove", scratch);
-
                 if (!claimEventAdded) {
                     claimBtn.addEventListener("click", () => {
                         localStorage.setItem("selectedProduct", JSON.stringify(product));
@@ -753,18 +737,9 @@
                 }
             }
         }
-
-        // --- MENU TOGGLE ---
-        const toggleButton = document.getElementById("toggle-button");
-        const slideMenu = document.getElementById("slide-menu");
-
-        toggleButton.addEventListener("click", () => slideMenu.classList.toggle("hidden"));
-        document.addEventListener("click", (event) => {
-            if (!slideMenu.classList.contains("hidden") && !toggleButton.contains(event.target) && !slideMenu.contains(event.target)) {
-                slideMenu.classList.add("hidden");
-            }
-        });
     </script>
+
+
 
 </body>
 
